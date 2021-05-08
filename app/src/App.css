@@ -36,3 +36,41 @@
     transform: rotate(360deg);
   }
 }
+
+form {
+  display: flex;
+}
+
+form div {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+form input, button {
+  outline: none;
+  padding: 10px;
+  border: 2px solid #61dafb;
+  border-radius: 5px;
+  height: 2rem;
+  font-size: large; 
+  font-family: cursive;
+  text-align: center;
+}
+
+form label {
+  margin-bottom: 10px;
+  font-size: larger;
+}
+
+button {
+  height: auto;
+  width: 4rem;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #61dafb;
+}
