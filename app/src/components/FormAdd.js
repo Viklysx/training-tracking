@@ -1,10 +1,25 @@
-export default function FormAdd({ props }) {
+import TrackingModel from './TrackingModel';
+import {nanoid} from 'nanoid';
+import {useState} from 'react';
+
+export default function FormAdd({ inputValue }) {
+    const [dataInput, setData] = useState({
+        date: '',
+        distance: ''
+    });
+
     const handleSubmit = evt => {
-        evt.preventDefault();
+        evt.preventDefault();          
+        const values = new TrackingModel(nanoid(), dataInput.date, dataInput.distance);
+        inputValue(values);
+        setData(prevForm => ({...prevForm, date: '', distance: ''}));
+        
     };
 
-    const handleDataChange = evt => {
-
+    const handleDataChange = evt => {     
+        const value = evt.target.value;
+        const name = evt.target.name;
+        setData(prevForm => ({...prevForm, [name]:value}));
     };
 
     return(
@@ -14,6 +29,8 @@ export default function FormAdd({ props }) {
                 <input 
                     id="date" 
                     type="date" 
+                    name="date"
+                    value={dataInput.date}
                     onChange={handleDataChange} />
             </div>
             <div>
@@ -21,6 +38,8 @@ export default function FormAdd({ props }) {
                 <input 
                     id="distance" 
                     type="text" 
+                    name="distance" 
+                    value={dataInput.distance}
                     onChange={handleDataChange} />
             </div>
             <button type="submit">OK</button>

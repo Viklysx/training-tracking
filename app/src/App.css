@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-logo {
@@ -54,13 +60,14 @@ form input, button {
   border-radius: 5px;
   height: 2rem;
   font-size: large; 
-  font-family: cursive;
+  font-family: inherit;
   text-align: center;
 }
 
 form label {
   margin-bottom: 10px;
   font-size: larger;
+  font-weight: 500;
 }
 
 button {
@@ -73,4 +80,42 @@ button {
 
 button:hover {
   background-color: #61dafb;
+}
+
+.block-list {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.block-list-title {
+  margin-right: 20px;
+  margin-bottom: 10px;
+  font-size: large;
+  font-weight: 500;
+}
+
+.block-list-wrapper {
+  padding: 10px;
+  border: 2px solid #61dafb;
+  border-radius: 5px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-item {
+  display: flex;
+  font-size: large;
+  font-family: inherit;
+  text-align: center;
+}
+
+.list-item span {
+  font-size: x-large;
+  margin-left: 15px;
+  cursor: pointer;
 }
